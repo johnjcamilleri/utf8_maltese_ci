@@ -44,4 +44,4 @@ and making sure it turns up no results. If the ID does exist, choose another ava
 1. Make sure the collation has been registered:  
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME='utf8_maltese_ci';`
 1. Create a simple test table by running `test-table.sql`, and run the following query to ensure the collation works:  
-`SELECT s FROM maltese_collation_test ORDER BY s ASC COLLATE 'utf8_maltese_ci';`
+`SELECT s FROM maltese_collation_test ORDER BY s COLLATE 'utf8_maltese_ci' ASC;`
