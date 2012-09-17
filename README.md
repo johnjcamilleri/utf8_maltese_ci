@@ -30,10 +30,10 @@ Installing the collation is relatively simple, and doesn't require recompiling a
 
 ### Installation
 
-1. The ID chosen for the Maltese collation is 1356. Make sure this ID is not in use on your system by running the following:  
-`SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE ID=1356;`  
+1. The ID chosen for the Maltese collation is 1356. Make sure this ID is not in use on your system by running the following:
+`SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE ID=1356;`
 and making sure it turns up no results. If the ID does exist, choose another available one (in the range 1024 to 2047).
-1. Find the location of MySQL's `Index.xml` file on your system file via the variable `character_sets_dir`:  
+1. Find the location of MySQL's `Index.xml` file on your system file via the variable `character_sets_dir`:
 `SHOW VARIABLES LIKE 'character_sets_dir';`
 1. Edit the `Index.xml` file, adding the Maltese `<collation ...>` section within `<charset name="utf8">...</charset>`.
 1. Save the file and restart the MySQL service.
@@ -41,7 +41,9 @@ and making sure it turns up no results. If the ID does exist, choose another ava
 
 ### Testing
 
-1. Make sure the collation has been registered:  
+1. Make sure the collation has been registered:
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME='utf8_maltese_ci';`
-1. Create a simple test table by running `test-table.sql`, and run the following query to ensure the collation works:  
+1. Create a simple test table by running `test-table.sql`, and run the following query to ensure the collation works:
 `SELECT s FROM maltese_collation_test ORDER BY s COLLATE 'utf8_maltese_ci' ASC;`
+1. You can then drop the test table with:
+`DROP TABLE maltese_collation_test;`
