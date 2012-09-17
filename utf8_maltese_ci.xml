@@ -1,0 +1,14 @@
+  <collation name="utf8_maltese_ci" id="1356">
+    <rules>
+       <!-- Case equivalences -->
+      <reset>\u010A</reset><t>\u010B</t> <!-- .C/.c -->
+      <reset>\u0120</reset><t>\u0121</t> <!-- .G/.g -->
+      <reset>\u0126</reset><t>\u0127</t> <!-- -H/-h -->
+      <reset>\u017B</reset><t>\u017C</t> <!-- .Z/.z -->
+       <!-- Letter orders -->
+      <reset>\u010B</reset><p>c</p> <!-- .c before c -->
+      <reset>\u0121</reset><p>g</p> <!-- .g before g -->
+      <reset>h</reset><p>\u0127</p> <!-- -h after h -->
+      <reset>\u017C</reset><p>z</p> <!-- .z before z -->
+    </rules>
+  </collation>
