@@ -28,7 +28,7 @@ Requirements:
 
 Installing the collation is relatively simple, and doesn't require recompiling anything. Adding a new collation does not affect any existing tables; you need to explicitly specify the collation in your create statements and/or queries in order to benefit from it.
 
-### Instructions
+### Installation
 
 1. The ID chosen for the Maltese collation is 1356. Make sure this ID is not in use on your system by running the following:  
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE ID=1356;`  
