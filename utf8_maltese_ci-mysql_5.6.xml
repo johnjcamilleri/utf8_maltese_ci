@@ -1,14 +1,21 @@
+  <!-- Maltese collation for MySQL 5.6.x -->
+  <!-- https://github.com/johnjcamilleri/utf8_maltese_ci -->
   <collation name="utf8_maltese_ci" id="1356">
     <rules>
        <!-- Case equivalences -->
       <reset>\u010A</reset><t>\u010B</t> <!-- .C/.c -->
       <reset>\u0120</reset><t>\u0121</t> <!-- .G/.g -->
+      <reset>G\u0126</reset><t>G\u0127</t><t>g\u0127</t> <!-- G-H/G-h/g-h -->
+      <reset>IE</reset><t>Ie</t><t>ie</t> <!-- IE/Ie/ie -->
       <reset>\u0126</reset><t>\u0127</t> <!-- -H/-h -->
       <reset>\u017B</reset><t>\u017C</t> <!-- .Z/.z -->
        <!-- Letter orders -->
       <reset>\u010B</reset><p>c</p> <!-- .c before c -->
       <reset>\u0121</reset><p>g</p> <!-- .g before g -->
+      <reset>g</reset><p>g\u0127</p> <!-- g-h after g -->
       <reset>h</reset><p>\u0127</p> <!-- -h after h -->
+      <reset>i</reset><p>ie</p> <!-- ie after i -->
       <reset>\u017C</reset><p>z</p> <!-- .z before z -->
     </rules>
   </collation>
+  <!-- end Maltese collation -->
