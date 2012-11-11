@@ -42,7 +42,8 @@ However you should make sure the chosen ID is not in use on your system by runni
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE ID=1356`  
 and making sure it turns up no results.
 1. Find the location of MySQL's `Index.xml` file on your system with the command  
-`SHOW VARIABLES LIKE 'character_sets_dir'`
+`SHOW VARIABLES LIKE 'character_sets_dir'`  
+On an Ubuntu system this returns `/usr/share/mysql/charsets/`
 1. Open the `Index.xml` file for editing (you will need to be root).
 1. Copy the Maltese `<collation ...>` section from the correct `utf8_maltese_ci-mysql_5.x.xml` file (from this repository).
 1. Paste the copied XML into the `<charset name="utf8">...</charset>` section of your `Index.xml` file.
