@@ -87,6 +87,7 @@ If the script above doesn't work for you (or you just want to do things manually
 
 On a Unix system you can usually restart MySQL in one of the following ways:
 
+- `service mysql restart`
 - `service mysqld restart`
 - `/etc/init.d/mysql restart`
 - `/etc/init.d/mysqld restart`
