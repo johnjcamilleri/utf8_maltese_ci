@@ -1,3 +1,5 @@
-patch: install
 install:
-	./patch.py
+	sudo ./install.py
+
+uninstall:
+	sudo ./uninstall.py

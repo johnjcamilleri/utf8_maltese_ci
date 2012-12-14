@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Patch the MySQL Index.xml file by adding definition for Maltese
+# Install the Maltese collation by patching the MySQL Index.xml
 
 import readline
 import os
@@ -15,7 +15,6 @@ except ImportError:
 # Some globals
 COLLATION = "utf8_maltese_ci"
 DEFAULT_XMLFILE = "/usr/share/mysql/charsets/Index.xml"
-# DEFAULT_XMLFILE = "test/Index.xml"
 VERSIONS = ["5.1","5.5","5.6"]
 CODEFILE_TEMPLATE = "utf8_maltese_ci-mysql_%s.xml"
 
