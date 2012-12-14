@@ -49,7 +49,9 @@ On an Ubuntu system this returns `/usr/share/mysql/charsets/`
 [id55]:http://dev.mysql.com/doc/refman/5.5/en/adding-collation-choosing-id.html
 [id56]:http://dev.mysql.com/doc/refman/5.6/en/adding-collation-choosing-id.html
 
-### 2a. Script-based installation
+### 2. Installation
+
+#### Script-based installation
 
 An install script is provided which will automatically patch your `Index.xml` file for you (you will first need the details above). Here is an example of it in use:
 
@@ -72,7 +74,9 @@ Notes about the install script:
 
 There is also a corresonding uninstall script, which can be invoked using `make uninstall`.
 
-### 2b. Manual installation
+#### Manual installation
+
+If the script above doesn't work for you (or you just want to do things manually) follow these steps:
 
 1. Open the `Index.xml` file in a text editor (you will need to be root).
 1. Copy the Maltese `<collation ...>` section from the correct `utf8_maltese_ci-mysql_5.x.xml` file for your version of MySQL.
@@ -81,13 +85,13 @@ There is also a corresonding uninstall script, which can be invoked using `make 
 
 ### 3. Restart MySQL
 
-You can usually restart MySQL in one of the following ways:
+On a Unix system you can usually restart MySQL in one of the following ways:
 
 - `service mysqld restart`
 - `/etc/init.d/mysql restart`
 - `/etc/init.d/mysqld restart`
 
-#### 4. Testing
+### 4. Testing
 
 1. Make sure the collation has been registered:  
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME='utf8_maltese_ci'`
