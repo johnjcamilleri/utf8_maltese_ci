@@ -3,8 +3,6 @@
 # Test the Maltese collation is loaded by MySQL
 
 import readline
-import os
-from shutil import copyfile
 import MySQLdb
 
 # Some globals
