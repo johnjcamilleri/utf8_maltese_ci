@@ -94,8 +94,26 @@ On a Unix system you can usually restart MySQL in one of the following ways:
 
 ### 4. Testing
 
-1. Make sure the collation has been registered:  
+#### Quick test
+
+To make sure the collation has been registered with MySQL, you can execute the supplied `test.py` script:  
+
+```bash
+$ ./test.py
+Script for checking that utf8_maltese_ci is registered in MySQL
+MySQL hostname (localhost): ↵
+Username (root): ↵
+Password (): mypassword↵
+OK
+```
+
+Alternatively, you can manually perform the quick test by executing the following query:  
 `SELECT * FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME='utf8_maltese_ci'`
-1. Create a simple test table by running `test-table.sql` (in this repository)
-1. Run the following query and check how the results are sorted to ensure the collation works:  
+
+#### Full test
+
+To test that the collation actually behaves as correctly, one should try it out on some test data:
+
+1. Create a simple test table by running `test-table.sql`
+1. Run the following query and check how the results are sorted as you'd expect:  
 `SELECT s FROM maltese_collation_test ORDER BY s ASC COLLATE 'utf8_maltese_ci'`
